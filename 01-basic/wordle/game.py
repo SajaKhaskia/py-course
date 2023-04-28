@@ -17,4 +17,5 @@ for i in range(6):
     else:
         wm.check_guess(guess)
         print("\n")
+print("Thank you for playing")
 

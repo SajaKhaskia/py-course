@@ -8,3 +8,6 @@ class WordsManager:
 
     def select_random(self):
         return random.choice(self.words)
+
+    def check_guess(self, guess):
+        pass

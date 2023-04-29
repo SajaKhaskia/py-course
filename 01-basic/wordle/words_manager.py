@@ -10,15 +10,21 @@ class WordsManager:
     def select_random(self):
         return random.choice(self.words)
 
+    # def check_guess(self, guess):
+    #     # print(f'Number of words: {len(guess)}')
+    #     for i in range(5):
+    #         for letter in guess:
+    #             if letter != self.secret[i]:
+    #                 letter = '_'
+    #             print(letter, end="")
+    #             i += 1
+    #         break
+
     def check_guess(self, guess):
-        # print(f'Number of words: {len(guess)}')
-        for i in range(5):
-            for letter in guess:
-                if letter != self.secret[i]:
-                    letter = '_'
-                print(letter, end="")
-                i += 1
-            break
+        for letter in guess:
+            if letter not in self.secret:
+                letter = '_'
+            print(letter, end="")
 
     def print_secret(self):
         print("*********")

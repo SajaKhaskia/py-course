@@ -20,15 +20,22 @@ class WordsManager:
     #             i += 1
     #         break
 
+    def right_place(self, index, letter, guess):
+        for i in range(5):
+            if letter == self.secret[index]:
+                return True
+
     def check_guess(self, guess):
-        for letter in guess:
+        for index, letter in enumerate(guess):
             if letter not in self.secret:
                 letter = '_'
+            if self.right_place(index, letter, guess):
+                letter = letter.upper()
             print(letter, end="")
 
     def print_secret(self):
         print("*********")
-        print(f'Random word: {self.secret}')
+        print(f'Random word: {self.secret.upper()}')
         print("*********")
 
     def print_instructions(self):
